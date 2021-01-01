@@ -15,39 +15,46 @@
 
 </head>
 <body>
-<h1>QR Card</h1>
-<!--    <h2>Add data</h2>-->
-    <div class="container-fluid" id="form-container">
+<!--<nav class="navbar fixed-top navbar-light bg-light">-->
+<!--    <div class="container-fluid">-->
+<!--        <a class="navbar-brand" href="#">Fixed top</a>-->
+<!--    </div>-->
+<!--</nav>-->
+    <div class="container-fluid">
+        <h1 class="mt-3 mb-3">QR Card</h1>
+    </div>
+
+    <div class="container-fluid text-center" id="form-container">
         <form action="" method="post" id="form_data">
-            <fieldset>
-                <!--            <legend>You</legend>-->
-                <p>
-                    <label for="first_name">Jméno</label>
-                    <input type="text" name="first_name" id="first_name" size="40">
-                </p>
-                <p>
-                    <label for="last_name">Příjmení</label>
-                    <input type="text" name="last_name" id="last_name" size="40">
-                </p>
-                <p>
-                    <label for="birthday">Datum narození</label>
-                    <input type="date" name="birthday" id="birthday" size="40">
-                </p>
-                <p>
-                    <label for="gender">Pohlaví</label>
-                    <select name="gender" id="gender">
-                        <option></option>
-                        <option value="Female">Žena</option>
-                        <option value="Male">Muž</option>
-                    </select>
-                </p>
-            </fieldset>
-            <p><input type="button" name="submit" value="Generovat"></p>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="first_name" id="first_name">
+                <label for="first_name">Jméno</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="last_name" id="last_name">
+                <label for="last_name">Příjmení</label>
+            </div>
+            <div class="form-floating  mb-3">
+                <input type="date" class="form-control" name="birthday" id="birthday">
+                <label for="birthday">Datum narození</label>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" name="gender" id="gender">
+                    <option selected></option>
+                    <option value="Female">Žena</option>
+                    <option value="Male">Muž</option>
+                </select>
+                <label for="gender">Pohlaví</label>
+            </div>
+
+            <div class="col-12 mt-3">
+                <button class="btn btn-primary" type="submit">Generovat</button>
+            </div>
         </form>
     </div>
 
     <div class="container-fluid">
-        <img class="img-fluid mx-auto d-block" id="qr" src="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=" alt="vcard qr">
+        <img class="mx-auto d-block" id="qr" src="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=" alt="vcard qr">
     </div>
 
     <script src="js/generator.js"></script>

@@ -172,5 +172,6 @@ var vcard = {
 };
 
 $(function () {
-    $('input[name="submit"]').click(vcard.save);
+    // $('input[name="submit"]').click(vcard.save);
+    $('button[type="submit"]').click(vcard.save);
 });
