@@ -2,7 +2,7 @@ var vcard = {
     str_start: 'BEGIN:VCARD\nVERSION:3.0\n',
     str_vcard: 'BEGIN:VCARD\nVERSION:3.0\n',
     str_end: '\nEND:VCARD',
-    goog_chart: `http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=`,
+    goog_chart: `https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=`,
     form: [],
     get_field: function (field) {
         for (var i in vcard.form) {
@@ -105,14 +105,11 @@ var vcard = {
             // skype = vcard.get_field("skype"),
             // flickr = vcard.get_field("flickr");
 
-        console.log(twitter)
-        console.log(twitter !== 'http://twitter.com/')
-
-        if (facebook !== 'http://facebook.com/') {
+        if (facebook !== 'https://facebook.com/') {
             vcard.str_vcard += '\nURL;type=facebook:' + facebook;
         }
 
-        if (twitter !== 'http://twitter.com/') {
+        if (twitter !== 'https://twitter.com/') {
             vcard.str_vcard += '\nURL;type=twitter:' + twitter;
         }
 
