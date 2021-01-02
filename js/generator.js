@@ -10,6 +10,7 @@ var vcard = {
                 return vcard.form[i].value.replace(/^\s+|\s+$/g, "");
             }
         }
+        return "";
     },
     add_you: function () {
         var first_name = vcard.get_field("first_name"),
@@ -99,30 +100,33 @@ var vcard = {
     },
     add_social: function () {
         var facebook = vcard.get_field("facebook"),
-            twitter = vcard.get_field("twitter"),
-            youtube = vcard.get_field("youtube"),
-            skype = vcard.get_field("skype"),
-            flickr = vcard.get_field("flickr");
+            twitter = vcard.get_field("twitter");
+            // youtube = vcard.get_field("youtube"),
+            // skype = vcard.get_field("skype"),
+            // flickr = vcard.get_field("flickr");
 
-        if (facebook !== 'http://www.facebook.com/') {
-            vcard.str_vcard += '\nsocialProfile;type=facebook:' + facebook;
+        console.log(twitter)
+        console.log(twitter !== 'http://twitter.com/')
+
+        if (facebook !== 'http://facebook.com/') {
+            vcard.str_vcard += '\nURL;type=facebook:' + facebook;
         }
 
-        if (twitter !== 'http://www.twitter.com/') {
-            vcard.str_vcard += '\nsocialProfile;type=twitter:' + twitter;
+        if (twitter !== 'http://twitter.com/') {
+            vcard.str_vcard += '\nURL;type=twitter:' + twitter;
         }
 
-        if (flickr !== 'http://www.flickr.com/') {
-            vcard.str_vcard += '\nalbum;type=photo:' + flickr;
-        }
-
-        if (youtube !== 'http://www.youtube.com/') {
-            vcard.str_vcard += '\nX-SKYPE:' + youtube;
-        }
-
-        if (skype !== '') {
-            vcard.str_vcard += '\nalbum;type=video:' + skype;
-        }
+        // if (flickr !== 'http://www.flickr.com/') {
+        //     vcard.str_vcard += '\nalbum;type=photo:' + flickr;
+        // }
+        //
+        // if (youtube !== 'http://www.youtube.com/') {
+        //     vcard.str_vcard += '\nX-SKYPE:' + youtube;
+        // }
+        //
+        // if (skype !== '') {
+        //     vcard.str_vcard += '\nalbum;type=video:' + skype;
+        // }
     },
     required_check: function () {
         var first_name = vcard.get_field("first_name"),
@@ -156,14 +160,18 @@ var vcard = {
         var required_check_output = vcard.required_check();
 
         if (required_check_output !== '') {
-            alert(required_check_output);
+            // alert(required_check_output);
             return;
         }
 
         vcard.add_you();
+        vcard.add_tel();
+        vcard.add_email();
+        vcard.add_url();
+        vcard.add_work();
+        vcard.add_social();
 
         vcard.str_vcard += vcard.str_end;
-
 
         $('#qr').attr('src', vcard.goog_chart + vcard.str_vcard.replace(/\n/g, '%0A'));
 

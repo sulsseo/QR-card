@@ -15,40 +15,61 @@
 
 </head>
 <body>
-<!--<nav class="navbar fixed-top navbar-light bg-light">-->
-<!--    <div class="container-fluid">-->
-<!--        <a class="navbar-brand" href="#">Fixed top</a>-->
-<!--    </div>-->
-<!--</nav>-->
-    <div class="container-fluid">
-        <h1 class="mt-3 mb-3">QR Card</h1>
+    <div class="container-fluid h1">
+        <h1 class="mt-3 mb-3">QR Vizitka</h1>
     </div>
 
-    <div class="container-fluid text-center" id="form-container">
+    <div class="container-fluid mb-3" id="form-container">
         <form action="" method="post" id="form_data">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="first_name" id="first_name">
-                <label for="first_name">Jméno</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="last_name" id="last_name">
-                <label for="last_name">Příjmení</label>
-            </div>
-            <div class="form-floating  mb-3">
-                <input type="date" class="form-control" name="birthday" id="birthday">
-                <label for="birthday">Datum narození</label>
-            </div>
-            <div class="form-floating mb-3">
-                <select class="form-select" name="gender" id="gender">
-                    <option selected></option>
-                    <option value="Female">Žena</option>
-                    <option value="Male">Muž</option>
-                </select>
-                <label for="gender">Pohlaví</label>
-            </div>
+            <fieldset>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="first_name" id="first_name" required>
+                    <label for="first_name">Jméno</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="last_name" id="last_name" required>
+                    <label for="last_name">Příjmení</label>
+                </div>
+                <div class="form-floating  mb-3" hidden>
+                    <input type="date" class="form-control" name="birthday" id="birthday">
+                    <label for="birthday">Datum narození</label>
+                </div>
+                <div class="form-floating mb-3" hidden>
+                    <select class="form-select" name="gender" id="gender" required>
+                        <option selected></option>
+                        <option value="Female">Žena</option>
+                        <option value="Male">Muž</option>
+                    </select>
+                    <label for="gender">Pohlaví</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Kontakt</legend>
+                <div class="form-floating  mb-3">
+                    <input type="text" class="form-control" name="home_tel" id="home_tel">
+                    <label for="home_tel">Telefon</label>
+                </div>
+                <div class="form-floating  mb-3">
+                    <input type="email" class="form-control" name="home_email" id="home_email">
+                    <label for="home_email">Email</label>
+                </div>
+                <div class="form-floating  mb-3">
+                    <input type="text" class="form-control" name="home_url" id="home_url">
+                    <label for="home_url">Web</label>
+                </div>
+                <div class="form-floating mt-1 mb-3">
+                    <input type="text" class="form-control" name="twitter" id="twitter" placeholder="example.com" value="http://twitter.com/" >
+                    <label for="twitter">Twitter</label>
+                </div>
+                <div class="form-floating mt-1 mb-3">
+                    <input type="text" class="form-control" name="facebook" id="facebook" placeholder="example.com" value="http://facebook.com/" >
+                    <label for="facebook">Facebook</label>
+                </div>
+            </fieldset>
 
-            <div class="col-12 mt-3">
-                <button class="btn btn-primary" type="submit">Generovat</button>
+
+            <div class="col-12 mt-3 text-center">
+                <button class="btn btn-primary" type="submit" id="generate_button">Generovat</button>
             </div>
         </form>
     </div>
