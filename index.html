@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>QR Contact Card</title>
+    <title>QR Business Card</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container-fluid h1">
-        <h1 class="mt-3 mb-3">QR Vizitka</h1>
+        <h1 class="mt-3 mb-3">QR Business Card</h1>
     </div>
 
     <div class="container-fluid mb-3" id="form-container">
@@ -24,30 +24,30 @@
             <fieldset>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="first_name" id="first_name" required>
-                    <label for="first_name">Jméno</label>
+                    <label for="first_name">First name</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="last_name" id="last_name" required>
-                    <label for="last_name">Příjmení</label>
+                    <label for="last_name">Last name</label>
                 </div>
                 <div class="form-floating  mb-3" hidden>
                     <input type="date" class="form-control" name="birthday" id="birthday">
-                    <label for="birthday">Datum narození</label>
+                    <label for="birthday">Birthday</label>
                 </div>
                 <div class="form-floating mb-3" hidden>
                     <select class="form-select" name="gender" id="gender" required>
                         <option selected></option>
-                        <option value="Female">Žena</option>
-                        <option value="Male">Muž</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
                     </select>
-                    <label for="gender">Pohlaví</label>
+                    <label for="gender">Gender</label>
                 </div>
             </fieldset>
             <fieldset>
-                <legend>Kontakt</legend>
+                <legend>Contact</legend>
                 <div class="form-floating  mb-3">
                     <input type="text" class="form-control" name="home_tel" id="home_tel">
-                    <label for="home_tel">Telefon</label>
+                    <label for="home_tel">Phone number</label>
                 </div>
                 <div class="form-floating  mb-3">
                     <input type="email" class="form-control" name="home_email" id="home_email">
@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-floating  mb-3">
                     <input type="text" class="form-control" name="home_url" id="home_url">
-                    <label for="home_url">Web</label>
+                    <label for="home_url">Website</label>
                 </div>
                 <div class="form-floating mt-1 mb-3">
                     <input type="text" class="form-control" name="twitter" id="twitter" placeholder="example.com" value="http://twitter.com/" >
@@ -69,7 +69,7 @@
 
 
             <div class="col-12 mt-3 text-center">
-                <button class="btn btn-primary" type="submit" id="generate_button">Generovat</button>
+                <button class="btn btn-primary" type="submit" id="generate_button">Generate</button>
             </div>
         </form>
     </div>
